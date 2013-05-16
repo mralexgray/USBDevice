@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 rms. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #import <IOKit/IOKitLib.h>
 #import <IOKit/usb/IOUSBLib.h>
 #import <IOKit/IOCFPlugIn.h>

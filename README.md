@@ -13,7 +13,7 @@ Say hello to USBDeviceFramework, an open-source IOKit based USB device framework
 
 Simple.
 
-<pre>$ git clone git://github.com/winocm/USBDeviceFramework.git</pre>
+<pre>$ git clone --recursive git://github.com/winocm/USBDeviceFramework.git</pre>
 
 ## Licensing
 
