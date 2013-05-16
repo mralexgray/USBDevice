@@ -12,6 +12,20 @@
 @implementation USBDevice
 @synthesize deviceFriendlyName, deviceSerialNumber;
 
+#pragma mark - Overrides
+-(void)dealloc {
+    if(_currentInterfaceInterface) {
+        (*_currentInterfaceInterface)->USBInterfaceClose(_currentInterfaceInterface);
+        (*_currentInterfaceInterface)->Release(_currentInterfaceInterface);
+    }
+    if(_currentDeviceInterface) {
+        (*_currentDeviceInterface)->USBDeviceClose(_currentDeviceInterface);
+        (*_currentDeviceInterface)->Release(_currentDeviceInterface);
+    }
+    [self resetIvars];
+    [super dealloc];
+}
+
 #pragma mark - Private methods.
 
 -(void)resetIvars {
