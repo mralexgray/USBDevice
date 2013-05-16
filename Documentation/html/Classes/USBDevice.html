@@ -1,0 +1,1232 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>USBDevice Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">USBDeviceFramework </a></h1>
+				<a id="developerHome" href="../index.html">Velocity Limitless</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">USBDevice Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/deviceFriendlyName">&nbsp;&nbsp;&nbsp;&nbsp;deviceFriendlyName</option>
+	
+	<option value="//api/name/deviceSerialNumber">&nbsp;&nbsp;&nbsp;&nbsp;deviceSerialNumber</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/copyDevicesWithMatchingClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ copyDevicesWithMatchingClass:</option>
+	
+	<option value="//api/name/getAllAttachedDevices">&nbsp;&nbsp;&nbsp;&nbsp;+ getAllAttachedDevices</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/bulkTransfer:withData:withLength:withTimeout:">&nbsp;&nbsp;&nbsp;&nbsp;- bulkTransfer:withData:withLength:withTimeout:</option>
+	
+	<option value="//api/name/bulkTransferRead:withData:withLengthOutput:withTimeout:">&nbsp;&nbsp;&nbsp;&nbsp;- bulkTransferRead:withData:withLengthOutput:withTimeout:</option>
+	
+	<option value="//api/name/controlTransfer:withTimeout:">&nbsp;&nbsp;&nbsp;&nbsp;- controlTransfer:withTimeout:</option>
+	
+	<option value="//api/name/enumerateDeviceInformation">&nbsp;&nbsp;&nbsp;&nbsp;- enumerateDeviceInformation</option>
+	
+	<option value="//api/name/isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:">&nbsp;&nbsp;&nbsp;&nbsp;- isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:</option>
+	
+	<option value="//api/name/isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:">&nbsp;&nbsp;&nbsp;&nbsp;- isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:</option>
+	
+	<option value="//api/name/openDeviceWithVid:withPid:">&nbsp;&nbsp;&nbsp;&nbsp;- openDeviceWithVid:withPid:</option>
+	
+	<option value="//api/name/reenumerateDevice">&nbsp;&nbsp;&nbsp;&nbsp;- reenumerateDevice</option>
+	
+	<option value="//api/name/resetDevice">&nbsp;&nbsp;&nbsp;&nbsp;- resetDevice</option>
+	
+	<option value="//api/name/setConfiguration:">&nbsp;&nbsp;&nbsp;&nbsp;- setConfiguration:</option>
+	
+	<option value="//api/name/setInterface:withAlternateInterface:">&nbsp;&nbsp;&nbsp;&nbsp;- setInterface:withAlternateInterface:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceFriendlyName">deviceFriendlyName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceSerialNumber">deviceSerialNumber</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/copyDevicesWithMatchingClass:">copyDevicesWithMatchingClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAllAttachedDevices">getAllAttachedDevices</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bulkTransfer:withData:withLength:withTimeout:">bulkTransfer:withData:withLength:withTimeout:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bulkTransferRead:withData:withLengthOutput:withTimeout:">bulkTransferRead:withData:withLengthOutput:withTimeout:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/controlTransfer:withTimeout:">controlTransfer:withTimeout:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enumerateDeviceInformation">enumerateDeviceInformation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:">isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:">isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openDeviceWithVid:withPid:">openDeviceWithVid:withPid:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reenumerateDevice">reenumerateDevice</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resetDevice">resetDevice</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setConfiguration:">setConfiguration:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setInterface:withAlternateInterface:">setInterface:withAlternateInterface:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="USBDevice Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">USBDevice Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">USBDevice.h<br />USBDevice.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The USBDevice class provides low level USB primitives (control, bulk, interrupt and isochronous) for transfers
+for any arbitrary device.</p>
+
+<p>To use the class, use the <code>-openDeviceWithVid:</code> method on an allocated USBDevice object.
+You may then send transfers when you wish on the specified object.</p>
+
+<p>Note that if the device fails to be opened, an assertion will be thrown in USBDeviceFramework.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/copyDevicesWithMatchingClass:">+&nbsp;copyDevicesWithMatchingClass:</a></code>
+		<span class="tooltip"><p>Copy out a NSDictionary containing classes matched to a specific device class.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAllAttachedDevices">+&nbsp;getAllAttachedDevices</a></code>
+		<span class="tooltip"><p>Copy out an NSArray of all attached devices on the system.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openDeviceWithVid:withPid:">&ndash;&nbsp;openDeviceWithVid:withPid:</a></code>
+		<span class="tooltip"><p>Open a specified device based on its product and vendor identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/controlTransfer:withTimeout:">&ndash;&nbsp;controlTransfer:withTimeout:</a></code>
+		<span class="tooltip"><p>Send a control transfer to the device with a specified timeout.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bulkTransfer:withData:withLength:withTimeout:">&ndash;&nbsp;bulkTransfer:withData:withLength:withTimeout:</a></code>
+		<span class="tooltip"><p>Write to the device using a bulk/interrupt endpoint.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bulkTransferRead:withData:withLengthOutput:withTimeout:">&ndash;&nbsp;bulkTransferRead:withData:withLengthOutput:withTimeout:</a></code>
+		<span class="tooltip"><p>Read from the device using a bulk/interrupt endpoint.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:">&ndash;&nbsp;isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:</a></code>
+		<span class="tooltip"><p>Send an isochronous packet to the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:">&ndash;&nbsp;isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:</a></code>
+		<span class="tooltip"><p>Read an isochronous packet from the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setConfiguration:">&ndash;&nbsp;setConfiguration:</a></code>
+		<span class="tooltip"><p>Set device configuration for specified device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setInterface:withAlternateInterface:">&ndash;&nbsp;setInterface:withAlternateInterface:</a></code>
+		<span class="tooltip"><p>Set device interface endpoint/alternate interface for specified device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resetDevice">&ndash;&nbsp;resetDevice</a></code>
+		<span class="tooltip"><p>Reset the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reenumerateDevice">&ndash;&nbsp;reenumerateDevice</a></code>
+		<span class="tooltip"><p>Reenumerate the device. This simulates an unplug and enumerates the device again as if it had been plugged in.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enumerateDeviceInformation">&ndash;&nbsp;enumerateDeviceInformation</a></code>
+		<span class="tooltip"><p>Returns an NSDictionary containing device information similar to <a href="#//api/name/getAllAttachedDevices"><code>getAllAttachedDevices</code></a> but only for the
+currently opened device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceSerialNumber">&nbsp;&nbsp;deviceSerialNumber</a></code>
+		<span class="tooltip"><p>Opened device serial number as per the <code>USB Serial Number</code> property in the I/O registry.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceFriendlyName">&nbsp;&nbsp;deviceFriendlyName</a></code>
+		<span class="tooltip"><p>Opened device friendly name as per its owner node in the I/O registry.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceFriendlyName" title="deviceFriendlyName"></a>
+	<h3 class="subsubtitle method-title">deviceFriendlyName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opened device friendly name as per its owner node in the I/O registry.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSString *deviceFriendlyName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceSerialNumber" title="deviceSerialNumber"></a>
+	<h3 class="subsubtitle method-title">deviceSerialNumber</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opened device serial number as per the <code>USB Serial Number</code> property in the I/O registry.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSString *deviceSerialNumber</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/copyDevicesWithMatchingClass:" title="copyDevicesWithMatchingClass:"></a>
+	<h3 class="subsubtitle method-title">copyDevicesWithMatchingClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Copy out a NSDictionary containing classes matched to a specific device class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)copyDevicesWithMatchingClass:(int)<em>deviceClass</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deviceClass</em></dt>
+			<dd><p>Specified device class.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Device class constants come from the <code>bDeviceClass</code> member of the device USB descriptor.
+A list can be found in IOKit/usb/USBSpec.h.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAllAttachedDevices" title="getAllAttachedDevices"></a>
+	<h3 class="subsubtitle method-title">getAllAttachedDevices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Copy out an NSArray of all attached devices on the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)getAllAttachedDevices</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This array includes device name, vendor/product ID, available bus power, parsed configuration descriptors and more.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/bulkTransfer:withData:withLength:withTimeout:" title="bulkTransfer:withData:withLength:withTimeout:"></a>
+	<h3 class="subsubtitle method-title">bulkTransfer:withData:withLength:withTimeout:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Write to the device using a bulk/interrupt endpoint.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)bulkTransfer:(uint8_t)<em>endpoint</em> withData:(uint8_t *)<em>data</em> withLength:(int)<em>length</em> withTimeout:(uint32_t)<em>timeout</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>endpoint</em></dt>
+			<dd><p>Device endpoint for communication.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>Buffer containing data to send.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>length</em></dt>
+			<dd><p>Size of the buffer containing data.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>timeout</em></dt>
+			<dd><p>Specified timeout for packet.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bulkTransferRead:withData:withLengthOutput:withTimeout:" title="bulkTransferRead:withData:withLengthOutput:withTimeout:"></a>
+	<h3 class="subsubtitle method-title">bulkTransferRead:withData:withLengthOutput:withTimeout:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Read from the device using a bulk/interrupt endpoint.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)bulkTransferRead:(uint8_t)<em>endpoint</em> withData:(uint8_t *)<em>data</em> withLengthOutput:(uint32_t *)<em>lengthOutput</em> withTimeout:(uint32_t)<em>timeout</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>endpoint</em></dt>
+			<dd><p>Device endpoint for communication.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>Buffer containing data to be read.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>lengthOutput</em></dt>
+			<dd><p>Length read from the device. The length of the buffer should be greater or equal to than the length read.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>timeout</em></dt>
+			<dd><p>Specified timeout for packet.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/controlTransfer:withTimeout:" title="controlTransfer:withTimeout:"></a>
+	<h3 class="subsubtitle method-title">controlTransfer:withTimeout:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Send a control transfer to the device with a specified timeout.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)controlTransfer:(controlPacketRef)<em>packet</em> withTimeout:(uint32_t)<em>timeout</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>packet</em></dt>
+			<dd><p>Specified control transfer packet.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>timeout</em></dt>
+			<dd><p>Specified timeout for packet.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enumerateDeviceInformation" title="enumerateDeviceInformation"></a>
+	<h3 class="subsubtitle method-title">enumerateDeviceInformation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an NSDictionary containing device information similar to <a href="#//api/name/getAllAttachedDevices"><code>getAllAttachedDevices</code></a> but only for the
+currently opened device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)enumerateDeviceInformation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:" title="isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:"></a>
+	<h3 class="subsubtitle method-title">isochronousRead:withData:withFrameStart:withNumberOfFrames:withFrameList:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Read an isochronous packet from the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)isochronousRead:(uint8_t)<em>pipeRef</em> withData:(uint8_t *)<em>data</em> withFrameStart:(uint64_t)<em>frameStart</em> withNumberOfFrames:(uint32_t)<em>numFrames</em> withFrameList:(IOUSBIsocFrame *)<em>isocFrame</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pipeRef</em></dt>
+			<dd><p>Specified USB endpoint for communication.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>Data buffer to read.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frameStart</em></dt>
+			<dd><p>Specified frame to start from.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numFrames</em></dt>
+			<dd><p>Number of frames to send.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isocFrame</em></dt>
+			<dd><p>A pointer to the IOUSBIsocFrame structure for the packet.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:" title="isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:"></a>
+	<h3 class="subsubtitle method-title">isochronousWrite:withData:withFrameStart:withNumberOfFrames:withFrameList:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Send an isochronous packet to the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)isochronousWrite:(uint8_t)<em>pipeRef</em> withData:(uint8_t *)<em>data</em> withFrameStart:(uint64_t)<em>frameStart</em> withNumberOfFrames:(uint32_t)<em>numFrames</em> withFrameList:(IOUSBIsocFrame *)<em>isocFrame</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pipeRef</em></dt>
+			<dd><p>Specified USB endpoint for communication.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>Data buffer to send.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frameStart</em></dt>
+			<dd><p>Specified frame to start from.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numFrames</em></dt>
+			<dd><p>Number of frames to send.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isocFrame</em></dt>
+			<dd><p>A pointer to the IOUSBIsocFrame structure for the packet.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openDeviceWithVid:withPid:" title="openDeviceWithVid:withPid:"></a>
+	<h3 class="subsubtitle method-title">openDeviceWithVid:withPid:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Open a specified device based on its product and vendor identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (USBDevice *)openDeviceWithVid:(uint16_t)<em>vendorId</em> withPid:(uint16_t)<em>productId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>vendorId</em></dt>
+			<dd><p>Specified device vendor identifier. (example: 0x05AC is Apple.)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>productId</em></dt>
+			<dd><p>Specified product device identifier. (example: 0x1227 is an iPhone in DFU mode.)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This device is opened for exclusive access. Deallocate the class to remove all active handles on the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reenumerateDevice" title="reenumerateDevice"></a>
+	<h3 class="subsubtitle method-title">reenumerateDevice</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reenumerate the device. This simulates an unplug and enumerates the device again as if it had been plugged in.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)reenumerateDevice</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resetDevice" title="resetDevice"></a>
+	<h3 class="subsubtitle method-title">resetDevice</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reset the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)resetDevice</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setConfiguration:" title="setConfiguration:"></a>
+	<h3 class="subsubtitle method-title">setConfiguration:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set device configuration for specified device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)setConfiguration:(int)<em>configuration</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>configuration</em></dt>
+			<dd><p>Specified configuration to set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setInterface:withAlternateInterface:" title="setInterface:withAlternateInterface:"></a>
+	<h3 class="subsubtitle method-title">setInterface:withAlternateInterface:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set device interface endpoint/alternate interface for specified device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)setInterface:(int)<em>interface</em> withAlternateInterface:(int)<em>altInterface</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>interface</em></dt>
+			<dd><p>Specified interface to set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>altInterface</em></dt>
+			<dd><p>Alternate interface to set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>See the <code>kUSBDeviceErrorStatus</code> enum.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">USBDevice.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Velocity Limitless. All rights reserved. (Last updated: 2013-05-16)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
