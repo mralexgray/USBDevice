@@ -1,0 +1,2 @@
+all:
+	appledoc --output Documentation --project-name USBDeviceFramework --project-company "Velocity Limitless" --no-repeat-first-par -h --no-create-docset .

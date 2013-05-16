@@ -183,8 +183,8 @@
             (*deviceInterface)->GetDeviceClass(deviceInterface, &deviceClass);
 
             // Add to dictionary.
-            [usbDictionary setObject:[NSNumber numberWithInt:locationId] forKey:@"LocationID"];
-            [usbDictionary setObject:[NSNumber numberWithInt:busPowerAvailable] forKey:@"BusPowerAvailable"];
+            [usbDictionary setObject:[NSNumber numberWithLong:locationId] forKey:@"LocationID"];
+            [usbDictionary setObject:[NSNumber numberWithLong:busPowerAvailable] forKey:@"BusPowerAvailable"];
             [usbDictionary setObject:[USBDevice stringForSpeed:deviceSpeed] forKey:@"DeviceSpeed"];
             [usbDictionary setObject:[NSNumber numberWithInt:numberOfConfigurations] forKey:@"NumberOfConfigurations"];
             [usbDictionary setObject:[NSString stringWithUTF8String:deviceName] forKey:@"DeviceFriendlyName"];
@@ -193,7 +193,7 @@
             [usbDictionary setObject:[NSNumber numberWithInt:deviceClass] forKey:@"DeviceClass"];
 
             // Add configuration descriptors to dictionary.
-            int iteratorCount;
+            uint8_t iteratorCount;
             for(iteratorCount = 0; iteratorCount <= numberOfConfigurations; iteratorCount++) {
                 IOUSBConfigurationDescriptorPtr deviceDescriptor;
                 NSDictionary *parsedConfigurationDescriptor = nil;
@@ -281,8 +281,8 @@
             (*deviceInterface)->GetDeviceClass(deviceInterface, &__deviceClass);
 
             // Add to dictionary.
-            [usbDictionary setObject:[NSNumber numberWithInt:locationId] forKey:@"LocationID"];
-            [usbDictionary setObject:[NSNumber numberWithInt:busPowerAvailable] forKey:@"BusPowerAvailable"];
+            [usbDictionary setObject:[NSNumber numberWithLong:locationId] forKey:@"LocationID"];
+            [usbDictionary setObject:[NSNumber numberWithLong:busPowerAvailable] forKey:@"BusPowerAvailable"];
             [usbDictionary setObject:[USBDevice stringForSpeed:deviceSpeed] forKey:@"DeviceSpeed"];
             [usbDictionary setObject:[NSNumber numberWithInt:numberOfConfigurations] forKey:@"NumberOfConfigurations"];
             [usbDictionary setObject:[NSString stringWithUTF8String:deviceName] forKey:@"DeviceFriendlyName"];
@@ -291,7 +291,7 @@
             [usbDictionary setObject:[NSNumber numberWithInt:__deviceClass] forKey:@"DeviceClass"];
 
             // Add configuration descriptors to dictionary.
-            int iteratorCount;
+            uint8_t iteratorCount;
             for(iteratorCount = 0; iteratorCount <= numberOfConfigurations; iteratorCount++) {
                 IOUSBConfigurationDescriptorPtr deviceDescriptor;
                 NSDictionary *parsedConfigurationDescriptor = nil;
@@ -452,11 +452,11 @@
     }
     
     // Set alternate interface
-    deviceError = (*_currentInterfaceInterface)->SetAlternateInterface(_currentInterfaceInterface, altInterface);
+    deviceError = (*_currentInterfaceInterface)->SetAlternateInterface(_currentInterfaceInterface, (uint8_t)altInterface);
     assert(deviceError == kIOReturnSuccess && "Failed to set alternate interface");
     
     _currentInterface = interface;
-    _currentAlternateInterface = interface;
+    _currentAlternateInterface = (uint8_t)interface;
 
     return kUSBDeviceErrorSuccess;
 }
@@ -470,14 +470,14 @@
 
 -(int)setConfiguration:(int)configuration {
     IOReturn status;
-    status = (*_currentDeviceInterface)->SetConfiguration(_currentDeviceInterface, configuration);
+    status = (*_currentDeviceInterface)->SetConfiguration(_currentDeviceInterface, (uint8_t)configuration);
     assert(status != kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
 }
 
 -(int)bulkTransfer:(uint8_t)endpoint withData:(uint8_t *)data withLength:(int)length withTimeout:(uint32_t)timeout {
     IOReturn status;
-    status = (*_currentInterfaceInterface)->WritePipeTO(_currentInterfaceInterface, endpoint, data, length, timeout, timeout);
+    status = (*_currentInterfaceInterface)->WritePipeTO(_currentInterfaceInterface, endpoint, data, (uint32_t)length, timeout, timeout);
     if(status != kIOReturnSuccess) {
         status = (*_currentInterfaceInterface)->ClearPipeStallBothEnds(_currentInterfaceInterface, endpoint);
         assert(status != kIOReturnSuccess);
@@ -503,7 +503,14 @@
     status = (*_currentInterfaceInterface)->ControlRequestTO(_currentInterfaceInterface, _currentAlternateInterface, &deviceRequest);
     assert(status != kIOReturnSuccess);
     
-    return deviceRequest.wLenDone;
+    return (int)deviceRequest.wLenDone;
+}
+
+-(int)reenumerateDevice {
+    IOReturn errorStatus;
+    errorStatus = (*_currentDeviceInterface)->USBDeviceReEnumerate(_currentDeviceInterface, 0);
+    assert(errorStatus != kIOReturnSuccess);
+    return kUSBDeviceErrorSuccess;
 }
 
 -(NSDictionary*)enumerateDeviceInformation {
@@ -530,8 +537,8 @@
     (*_currentDeviceInterface)->GetDeviceClass(_currentDeviceInterface, &__deviceClass);
     
     // Add to dictionary.
-    [usbDictionary setObject:[NSNumber numberWithInt:locationId] forKey:@"LocationID"];
-    [usbDictionary setObject:[NSNumber numberWithInt:busPowerAvailable] forKey:@"BusPowerAvailable"];
+    [usbDictionary setObject:[NSNumber numberWithLong:locationId] forKey:@"LocationID"];
+    [usbDictionary setObject:[NSNumber numberWithLong:busPowerAvailable] forKey:@"BusPowerAvailable"];
     [usbDictionary setObject:[USBDevice stringForSpeed:deviceSpeed] forKey:@"DeviceSpeed"];
     [usbDictionary setObject:[NSNumber numberWithInt:numberOfConfigurations] forKey:@"NumberOfConfigurations"];
     [usbDictionary setObject:deviceFriendlyName forKey:@"DeviceFriendlyName"];
@@ -540,7 +547,7 @@
     [usbDictionary setObject:[NSNumber numberWithInt:__deviceClass] forKey:@"DeviceClass"];
     
     // Add configuration descriptors to dictionary.
-    int iteratorCount;
+    uint8_t iteratorCount;
     for(iteratorCount = 0; iteratorCount <= numberOfConfigurations; iteratorCount++) {
         IOUSBConfigurationDescriptorPtr deviceDescriptor;
         NSDictionary *parsedConfigurationDescriptor = nil;
@@ -555,6 +562,31 @@
     }
     
     return usbDictionary;
+}
+
+-(int)isochronousWrite:(uint8_t)pipeRef withData:(uint8_t*)data withFrameStart:(uint64_t)frameStart withNumberOfFrames:(uint32_t)numFrames withFrameList:(IOUSBIsocFrame*)isocFrame {
+    IOReturn errorStatus;
+    errorStatus = (*_currentInterfaceInterface)->WriteIsochPipeAsync(_currentInterfaceInterface, pipeRef, data, frameStart, numFrames, isocFrame, nil, nil);
+    assert(errorStatus != kIOReturnSuccess);
+    return kUSBDeviceErrorSuccess;
+}
+
+-(int)isochronousRead:(uint8_t)pipeRef withData:(uint8_t*)data withFrameStart:(uint64_t)frameStart withNumberOfFrames:(uint32_t)numFrames withFrameList:(IOUSBIsocFrame*)isocFrame {
+    IOReturn errorStatus;
+    errorStatus = (*_currentInterfaceInterface)->ReadIsochPipeAsync(_currentInterfaceInterface, pipeRef, data, frameStart, numFrames, isocFrame, nil, nil);
+    assert(errorStatus != kIOReturnSuccess);
+    return kUSBDeviceErrorSuccess;
+}
+
+-(int)bulkTransferRead:(uint8_t)endpoint withData:(uint8_t *)data withLengthOutput:(uint32_t*)lengthOutput withTimeout:(uint32_t)timeout {
+    IOReturn status;
+    
+    status = (*_currentInterfaceInterface)->ReadPipeTO(_currentInterfaceInterface, endpoint, data, lengthOutput, timeout, timeout);
+    if(status != kIOReturnSuccess) {
+        status = (*_currentInterfaceInterface)->ClearPipeStallBothEnds(_currentInterfaceInterface, endpoint);
+        assert(status != kIOReturnSuccess);
+    }
+    return kUSBDeviceErrorSuccess;
 }
 
 @end
