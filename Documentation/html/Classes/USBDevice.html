@@ -61,7 +61,7 @@
 	
 	<option value="//api/name/bulkTransferRead:withData:withLengthOutput:withTimeout:">&nbsp;&nbsp;&nbsp;&nbsp;- bulkTransferRead:withData:withLengthOutput:withTimeout:</option>
 	
-	<option value="//api/name/controlTransfer:withTimeout:">&nbsp;&nbsp;&nbsp;&nbsp;- controlTransfer:withTimeout:</option>
+	<option value="//api/name/controlTransfer:withTimeout:withTransferred:">&nbsp;&nbsp;&nbsp;&nbsp;- controlTransfer:withTimeout:withTransferred:</option>
 	
 	<option value="//api/name/enumerateDeviceInformation">&nbsp;&nbsp;&nbsp;&nbsp;- enumerateDeviceInformation</option>
 	
@@ -127,7 +127,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bulkTransferRead:withData:withLengthOutput:withTimeout:">bulkTransferRead:withData:withLengthOutput:withTimeout:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/controlTransfer:withTimeout:">controlTransfer:withTimeout:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/controlTransfer:withTimeout:withTransferred:">controlTransfer:withTimeout:withTransferred:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enumerateDeviceInformation">enumerateDeviceInformation</a></span></li>
 	
@@ -227,7 +227,7 @@ You may then send transfers when you wish on the specified object.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/controlTransfer:withTimeout:">&ndash;&nbsp;controlTransfer:withTimeout:</a></code>
+		<code><a href="#//api/name/controlTransfer:withTimeout:withTransferred:">&ndash;&nbsp;controlTransfer:withTimeout:withTransferred:</a></code>
 		<span class="tooltip"><p>Send a control transfer to the device with a specified timeout.</p></span>
 	</span>
 	
@@ -637,8 +637,8 @@ A list can be found in IOKit/usb/USBSpec.h.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/controlTransfer:withTimeout:" title="controlTransfer:withTimeout:"></a>
-	<h3 class="subsubtitle method-title">controlTransfer:withTimeout:</h3>
+	<a name="//api/name/controlTransfer:withTimeout:withTransferred:" title="controlTransfer:withTimeout:withTransferred:"></a>
+	<h3 class="subsubtitle method-title">controlTransfer:withTimeout:withTransferred:</h3>
 	
 	
 	
@@ -648,7 +648,7 @@ A list can be found in IOKit/usb/USBSpec.h.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (int)controlTransfer:(controlPacketRef)<em>packet</em> withTimeout:(uint32_t)<em>timeout</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (int)controlTransfer:(controlPacketRef)<em>packet</em> withTimeout:(uint32_t)<em>timeout</em> withTransferred:(uint32_t *)<em>transferred</em></code></div>
 
     
 	
@@ -663,6 +663,11 @@ A list can be found in IOKit/usb/USBSpec.h.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>timeout</em></dt>
 			<dd><p>Specified timeout for packet.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>transferred</em></dt>
+			<dd><p>Bytes transferred during operation.</p></dd>
 		</dl>
 		
 	</div>
