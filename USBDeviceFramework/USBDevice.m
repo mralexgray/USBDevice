@@ -478,14 +478,14 @@
 -(int)resetDevice {
     IOReturn status;
     status = (*_currentDeviceInterface)->ResetDevice(_currentDeviceInterface);
-    assert(status != kIOReturnSuccess);
+    assert(status == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
 }
 
 -(int)setConfiguration:(int)configuration {
     IOReturn status;
     status = (*_currentDeviceInterface)->SetConfiguration(_currentDeviceInterface, (uint8_t)configuration);
-    assert(status != kIOReturnSuccess);
+    assert(status == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
 }
 
@@ -494,16 +494,17 @@
     status = (*_currentInterfaceInterface)->WritePipeTO(_currentInterfaceInterface, endpoint, data, (uint32_t)length, timeout, timeout);
     if(status != kIOReturnSuccess) {
         status = (*_currentInterfaceInterface)->ClearPipeStallBothEnds(_currentInterfaceInterface, endpoint);
-        assert(status != kIOReturnSuccess);
+        assert(status == kIOReturnSuccess);
     }
     return kUSBDeviceErrorSuccess;
 }
 
--(int)controlTransfer:(controlPacketRef)packet withTimeout:(uint32_t)timeout {
+-(int)controlTransfer:(controlPacketRef)packet withTimeout:(uint32_t)timeout withTransferred:(uint32_t*)transferred {
     IOReturn status;
     IOUSBDevRequestTO deviceRequest;
     
     assert(packet != NULL);
+    assert(transferred != NULL);
     
     deviceRequest.bmRequestType = packet->bmRequestType;
     deviceRequest.bRequest = packet->bRequest;
@@ -515,15 +516,19 @@
     deviceRequest.completionTimeout = timeout;
 
     status = (*_currentInterfaceInterface)->ControlRequestTO(_currentInterfaceInterface, _currentAlternateInterface, &deviceRequest);
-    assert(status != kIOReturnSuccess);
+    assert(status == kIOReturnSuccess);
+
+    assert(transferred != NULL);
     
-    return (int)deviceRequest.wLenDone;
+    *transferred = deviceRequest.wLenDone;
+    
+    return kUSBDeviceErrorSuccess;
 }
 
 -(int)reenumerateDevice {
     IOReturn errorStatus;
     errorStatus = (*_currentDeviceInterface)->USBDeviceReEnumerate(_currentDeviceInterface, 0);
-    assert(errorStatus != kIOReturnSuccess);
+    assert(errorStatus == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
 }
 
@@ -581,14 +586,14 @@
 -(int)isochronousWrite:(uint8_t)pipeRef withData:(uint8_t*)data withFrameStart:(uint64_t)frameStart withNumberOfFrames:(uint32_t)numFrames withFrameList:(IOUSBIsocFrame*)isocFrame {
     IOReturn errorStatus;
     errorStatus = (*_currentInterfaceInterface)->WriteIsochPipeAsync(_currentInterfaceInterface, pipeRef, data, frameStart, numFrames, isocFrame, nil, nil);
-    assert(errorStatus != kIOReturnSuccess);
+    assert(errorStatus == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
 }
 
 -(int)isochronousRead:(uint8_t)pipeRef withData:(uint8_t*)data withFrameStart:(uint64_t)frameStart withNumberOfFrames:(uint32_t)numFrames withFrameList:(IOUSBIsocFrame*)isocFrame {
     IOReturn errorStatus;
     errorStatus = (*_currentInterfaceInterface)->ReadIsochPipeAsync(_currentInterfaceInterface, pipeRef, data, frameStart, numFrames, isocFrame, nil, nil);
-    assert(errorStatus != kIOReturnSuccess);
+    assert(errorStatus == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
 }
 
@@ -598,7 +603,7 @@
     status = (*_currentInterfaceInterface)->ReadPipeTO(_currentInterfaceInterface, endpoint, data, lengthOutput, timeout, timeout);
     if(status != kIOReturnSuccess) {
         status = (*_currentInterfaceInterface)->ClearPipeStallBothEnds(_currentInterfaceInterface, endpoint);
-        assert(status != kIOReturnSuccess);
+        assert(status == kIOReturnSuccess);
     }
     return kUSBDeviceErrorSuccess;
 }

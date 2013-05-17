@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D863FA161745C0FC0044A8E5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E4B174459CD00B72444 /* Cocoa.framework */; };
+		D863FA1C1745C0FC0044A8E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D863FA1A1745C0FC0044A8E5 /* InfoPlist.strings */; };
+		D863FA241745C15A0044A8E5 /* USBDeviceFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E48174459CD00B72444 /* USBDeviceFramework.framework */; };
+		D863FA291745C1830044A8E5 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E7517445FBB00B72444 /* CoreFoundation.framework */; };
+		D863FA2C1745C1CF0044A8E5 /* iBootDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = D863FA2A1745C1CF0044A8E5 /* iBootDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D863FA2D1745C1CF0044A8E5 /* iBootDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D863FA2B1745C1CF0044A8E5 /* iBootDevice.m */; };
+		D863FA2F1745C59D0044A8E5 /* USBDeviceFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D863FA2E1745C5820044A8E5 /* USBDeviceFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8A69E4C174459CD00B72444 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E4B174459CD00B72444 /* Cocoa.framework */; };
 		D8A69E56174459CD00B72444 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A69E54174459CD00B72444 /* InfoPlist.strings */; };
 		D8A69E62174459E800B72444 /* USBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A69E60174459E800B72444 /* USBDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +43,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D863FA151745C0FC0044A8E5 /* USBDeviceDrivers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = USBDeviceDrivers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D863FA191745C0FC0044A8E5 /* USBDeviceDrivers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "USBDeviceDrivers-Info.plist"; sourceTree = "<group>"; };
+		D863FA1B1745C0FC0044A8E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D863FA1D1745C0FC0044A8E5 /* USBDeviceDrivers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USBDeviceDrivers-Prefix.pch"; sourceTree = "<group>"; };
+		D863FA2A1745C1CF0044A8E5 /* iBootDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBootDevice.h; sourceTree = "<group>"; };
+		D863FA2B1745C1CF0044A8E5 /* iBootDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iBootDevice.m; sourceTree = "<group>"; };
+		D863FA2E1745C5820044A8E5 /* USBDeviceFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USBDeviceFramework.h; sourceTree = "<group>"; };
 		D8A69E48174459CD00B72444 /* USBDeviceFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = USBDeviceFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A69E4B174459CD00B72444 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D8A69E4E174459CD00B72444 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -54,6 +68,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D863FA111745C0FC0044A8E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D863FA241745C15A0044A8E5 /* USBDeviceFramework.framework in Frameworks */,
+				D863FA291745C1830044A8E5 /* CoreFoundation.framework in Frameworks */,
+				D863FA161745C0FC0044A8E5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8A69E44174459CD00B72444 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,11 +103,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D863FA171745C0FC0044A8E5 /* USBDeviceDrivers */ = {
+			isa = PBXGroup;
+			children = (
+				D863FA181745C0FC0044A8E5 /* Supporting Files */,
+				D863FA2A1745C1CF0044A8E5 /* iBootDevice.h */,
+				D863FA2B1745C1CF0044A8E5 /* iBootDevice.m */,
+			);
+			path = USBDeviceDrivers;
+			sourceTree = "<group>";
+		};
+		D863FA181745C0FC0044A8E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D863FA191745C0FC0044A8E5 /* USBDeviceDrivers-Info.plist */,
+				D863FA1A1745C0FC0044A8E5 /* InfoPlist.strings */,
+				D863FA1D1745C0FC0044A8E5 /* USBDeviceDrivers-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D8A69E3E174459CD00B72444 = {
 			isa = PBXGroup;
 			children = (
 				D8A69E51174459CD00B72444 /* USBDeviceFramework */,
 				D8A69E6917445F8C00B72444 /* USBDeviceFrameworkTestTool */,
+				D863FA171745C0FC0044A8E5 /* USBDeviceDrivers */,
 				D8A69E4A174459CD00B72444 /* Frameworks */,
 				D8A69E49174459CD00B72444 /* Products */,
 			);
@@ -94,6 +139,7 @@
 			children = (
 				D8A69E48174459CD00B72444 /* USBDeviceFramework.framework */,
 				D8A69E6817445F8B00B72444 /* USBDeviceFrameworkTestTool */,
+				D863FA151745C0FC0044A8E5 /* USBDeviceDrivers.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +171,7 @@
 				D8A69E52174459CD00B72444 /* Supporting Files */,
 				D8A69E60174459E800B72444 /* USBDevice.h */,
 				D8A69E61174459E800B72444 /* USBDevice.m */,
+				D863FA2E1745C5820044A8E5 /* USBDeviceFramework.h */,
 			);
 			path = USBDeviceFramework;
 			sourceTree = "<group>";
@@ -151,17 +198,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		D863FA121745C0FC0044A8E5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D863FA2C1745C1CF0044A8E5 /* iBootDevice.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8A69E45174459CD00B72444 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D8A69E62174459E800B72444 /* USBDevice.h in Headers */,
+				D863FA2F1745C59D0044A8E5 /* USBDeviceFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D863FA141745C0FC0044A8E5 /* USBDeviceDrivers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D863FA231745C0FC0044A8E5 /* Build configuration list for PBXNativeTarget "USBDeviceDrivers" */;
+			buildPhases = (
+				D863FA101745C0FC0044A8E5 /* Sources */,
+				D863FA111745C0FC0044A8E5 /* Frameworks */,
+				D863FA121745C0FC0044A8E5 /* Headers */,
+				D863FA131745C0FC0044A8E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = USBDeviceDrivers;
+			productName = USBDeviceDrivers;
+			productReference = D863FA151745C0FC0044A8E5 /* USBDeviceDrivers.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D8A69E47174459CD00B72444 /* USBDeviceFramework */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8A69E5D174459CD00B72444 /* Build configuration list for PBXNativeTarget "USBDeviceFramework" */;
@@ -219,12 +293,21 @@
 			projectRoot = "";
 			targets = (
 				D8A69E47174459CD00B72444 /* USBDeviceFramework */,
+				D863FA141745C0FC0044A8E5 /* USBDeviceDrivers */,
 				D8A69E6717445F8B00B72444 /* USBDeviceFrameworkTestTool */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D863FA131745C0FC0044A8E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D863FA1C1745C0FC0044A8E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8A69E46174459CD00B72444 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +319,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D863FA101745C0FC0044A8E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D863FA2D1745C1CF0044A8E5 /* iBootDevice.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8A69E43174459CD00B72444 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +346,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D863FA1A1745C0FC0044A8E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D863FA1B1745C0FC0044A8E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		D8A69E54174459CD00B72444 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -266,6 +365,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D863FA211745C0FC0044A8E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "USBDeviceDrivers/USBDeviceDrivers-Prefix.pch";
+				INFOPLIST_FILE = "USBDeviceDrivers/USBDeviceDrivers-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		D863FA221745C0FC0044A8E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "USBDeviceDrivers/USBDeviceDrivers-Prefix.pch";
+				INFOPLIST_FILE = "USBDeviceDrivers/USBDeviceDrivers-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 		D8A69E5B174459CD00B72444 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -406,6 +539,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D863FA231745C0FC0044A8E5 /* Build configuration list for PBXNativeTarget "USBDeviceDrivers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D863FA211745C0FC0044A8E5 /* Debug */,
+				D863FA221745C0FC0044A8E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D8A69E42174459CD00B72444 /* Build configuration list for PBXProject "USBDeviceFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -422,6 +563,7 @@
 				D8A69E5F174459CD00B72444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8A69E6E17445F8C00B72444 /* Build configuration list for PBXNativeTarget "USBDeviceFrameworkTestTool" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +572,7 @@
 				D8A69E7017445F8C00B72444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

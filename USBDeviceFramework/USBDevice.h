@@ -20,10 +20,21 @@ typedef struct __controlPacket {
     uint16_t wLength;
 } controlPacket, *controlPacketRef;
 
+#define MakeRequest(packet, _bmRequestType, _bRequest, _wValue, _wIndex, _data, _wLength) \
+    do {                                        \
+        packet.bmRequestType = _bmRequestType;  \
+        packet.bRequest = _bRequest;            \
+        packet.wValue = _wValue;                \
+        packet.wIndex = _wIndex;                \
+        packet.data = _data;                    \
+        packet.wLength = _wLength;              \
+    } while(0);
+
 typedef enum {
     kUSBDeviceErrorSuccess = 0,
     kUSBDeviceErrorIO,
-    kUSBDeviceErrorUnsuccessful
+    kUSBDeviceErrorUnsuccessful,
+    kUSBDeviceErrorUnsupported
 } kUSBDeviceErrorStatus;
 
 /**
@@ -82,8 +93,9 @@ typedef enum {
  
  @param packet Specified control transfer packet.
  @param timeout Specified timeout for packet.
+ @param transferred Bytes transferred during operation.
  */
--(int)controlTransfer:(controlPacketRef)packet withTimeout:(uint32_t)timeout;
+-(int)controlTransfer:(controlPacketRef)packet withTimeout:(uint32_t)timeout withTransferred:(uint32_t*)transferred;
 
 /**
  Write to the device using a bulk/interrupt endpoint.
