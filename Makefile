@@ -2,6 +2,6 @@ THEOS=theos
 
 include $(THEOS)/makefiles/common.mk
 
-SUBPROJECTS=USBDeviceFramework USBDeviceFrameworkTestTool
+SUBPROJECTS=USBDeviceFramework USBDeviceDrivers USBDeviceFrameworkTestTool
 include $(THEOS)/makefiles/aggregate.mk
 
