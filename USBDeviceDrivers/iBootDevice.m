@@ -15,8 +15,8 @@
     uint16_t length = (uint16_t)strlen(command);
     controlPacket packet;
     uint32_t transferredAmount = 0;
-    
-    if(_currentPid == kUSBAppleiBootDevice)
+
+    if(_currentPid != kUSBAppleiBootDevice)
         return kUSBDeviceErrorUnsupported;
     
     if(length >= 0x100)

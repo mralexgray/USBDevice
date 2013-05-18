@@ -3,12 +3,13 @@
 //
 
 #import <USBDeviceFramework/USBDevice.h>
+#import <USBDeviceDrivers/iBootDevice.h>
 
 int main(int argc, char* argv[])
 {
-    USBDevice *mouse = [[USBDevice alloc] openDeviceWithVid:1133 withPid:49164];
-    NSLog(@"Friendly name: %@", [mouse deviceFriendlyName]);
-    NSLog(@"Serial: %@", [mouse deviceSerialNumber]);
-    [mouse dealloc];
+    iBootDevice *ibootDevice = (iBootDevice*)[[iBootDevice alloc] openDeviceWithVid:0x5AC withPid:0x1281];
+    [ibootDevice setConfiguration:1];
+    [ibootDevice setInterface:0 withAlternateInterface:0];
+    [ibootDevice sendCommand:"reboot"];
     return 0;
 }

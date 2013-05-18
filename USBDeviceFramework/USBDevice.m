@@ -419,6 +419,8 @@
     interfaceRequest.bInterfaceSubClass = kIOUSBFindInterfaceDontCare;
     interfaceRequest.bInterfaceProtocol = kIOUSBFindInterfaceDontCare;
     interfaceRequest.bAlternateSetting = kIOUSBFindInterfaceDontCare;
+    
+    assert(_currentDeviceInterface != nil && "Device interface nonexistent; did you open the device?");
 
     deviceError = (*_currentDeviceInterface)->CreateInterfaceIterator(_currentDeviceInterface, &interfaceRequest, &interfaceIterator);
     assert(deviceError == kIOReturnSuccess && "Failed to create interface iterator");
@@ -462,21 +464,27 @@
             deviceError = (*__interface)->USBInterfaceOpen(__interface);
             assert(deviceError == kIOReturnSuccess && "Failed to open device interface");
             _currentInterfaceInterface = __interface;
+            break;
         }
     }
     
     // Set alternate interface
     deviceError = (*_currentInterfaceInterface)->SetAlternateInterface(_currentInterfaceInterface, (uint8_t)altInterface);
+    if(deviceError == kIOUSBPipeStalled) {
+        deviceError = (*_currentInterfaceInterface)->ClearPipeStallBothEnds(_currentInterfaceInterface, 0);
+    }
+    
     assert(deviceError == kIOReturnSuccess && "Failed to set alternate interface");
     
     _currentInterface = interface;
-    _currentAlternateInterface = (uint8_t)interface;
+    _currentAlternateInterface = (uint8_t)altInterface;
 
     return kUSBDeviceErrorSuccess;
 }
 
 -(int)resetDevice {
     IOReturn status;
+    assert(_currentDeviceInterface != nil && "Device interface nonexistent; did you open the device?");
     status = (*_currentDeviceInterface)->ResetDevice(_currentDeviceInterface);
     assert(status == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
@@ -484,6 +492,7 @@
 
 -(int)setConfiguration:(int)configuration {
     IOReturn status;
+    assert(_currentDeviceInterface != nil && "Device interface nonexistent; did you open the device?");
     status = (*_currentDeviceInterface)->SetConfiguration(_currentDeviceInterface, (uint8_t)configuration);
     assert(status == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
@@ -491,6 +500,7 @@
 
 -(int)bulkTransfer:(uint8_t)endpoint withData:(uint8_t *)data withLength:(int)length withTimeout:(uint32_t)timeout {
     IOReturn status;
+    assert(_currentInterfaceInterface != nil && "Interface interface nonexistent; did you set a configuration?");
     status = (*_currentInterfaceInterface)->WritePipeTO(_currentInterfaceInterface, endpoint, data, (uint32_t)length, timeout, timeout);
     if(status != kIOReturnSuccess) {
         status = (*_currentInterfaceInterface)->ClearPipeStallBothEnds(_currentInterfaceInterface, endpoint);
@@ -515,6 +525,8 @@
     deviceRequest.noDataTimeout = timeout;
     deviceRequest.completionTimeout = timeout;
 
+    assert(_currentInterfaceInterface != nil && "Interface interface nonexistent; did you set a configuration?");
+
     status = (*_currentInterfaceInterface)->ControlRequestTO(_currentInterfaceInterface, _currentAlternateInterface, &deviceRequest);
     assert(status == kIOReturnSuccess);
 
@@ -527,6 +539,7 @@
 
 -(int)reenumerateDevice {
     IOReturn errorStatus;
+    assert(_currentDeviceInterface != nil && "Device interface nonexistent; did you open the device?");
     errorStatus = (*_currentDeviceInterface)->USBDeviceReEnumerate(_currentDeviceInterface, 0);
     assert(errorStatus == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
@@ -585,6 +598,7 @@
 
 -(int)isochronousWrite:(uint8_t)pipeRef withData:(uint8_t*)data withFrameStart:(uint64_t)frameStart withNumberOfFrames:(uint32_t)numFrames withFrameList:(IOUSBIsocFrame*)isocFrame {
     IOReturn errorStatus;
+    assert(_currentInterfaceInterface != nil && "Interface interface nonexistent; did you set a configuration?");
     errorStatus = (*_currentInterfaceInterface)->WriteIsochPipeAsync(_currentInterfaceInterface, pipeRef, data, frameStart, numFrames, isocFrame, nil, nil);
     assert(errorStatus == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
@@ -592,6 +606,7 @@
 
 -(int)isochronousRead:(uint8_t)pipeRef withData:(uint8_t*)data withFrameStart:(uint64_t)frameStart withNumberOfFrames:(uint32_t)numFrames withFrameList:(IOUSBIsocFrame*)isocFrame {
     IOReturn errorStatus;
+    assert(_currentInterfaceInterface != nil && "Interface interface nonexistent; did you set a configuration?");
     errorStatus = (*_currentInterfaceInterface)->ReadIsochPipeAsync(_currentInterfaceInterface, pipeRef, data, frameStart, numFrames, isocFrame, nil, nil);
     assert(errorStatus == kIOReturnSuccess);
     return kUSBDeviceErrorSuccess;
@@ -599,7 +614,7 @@
 
 -(int)bulkTransferRead:(uint8_t)endpoint withData:(uint8_t *)data withLengthOutput:(uint32_t*)lengthOutput withTimeout:(uint32_t)timeout {
     IOReturn status;
-    
+    assert(_currentInterfaceInterface != nil && "Interface interface nonexistent; did you set a configuration?");    
     status = (*_currentInterfaceInterface)->ReadPipeTO(_currentInterfaceInterface, endpoint, data, lengthOutput, timeout, timeout);
     if(status != kIOReturnSuccess) {
         status = (*_currentInterfaceInterface)->ClearPipeStallBothEnds(_currentInterfaceInterface, endpoint);

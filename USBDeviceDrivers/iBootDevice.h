@@ -18,6 +18,10 @@
  
  iBootDevice is used as an example to show off the powers of the USBDeviceFramework application
  framework.
+ 
+ You should be able to handle parsing the serial number of the device as returned by `-deviceSerialNumber`
+ very easily to create an application specific to a target device type (i.e: CPID, CPRV, CPFM, SCEP, etc).
+ Currently, the iBootDevice API does not do this. You are free to implement it however.
  */
 @interface iBootDevice : USBDevice {
 }

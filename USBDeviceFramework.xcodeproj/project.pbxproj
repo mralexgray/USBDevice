@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D86084041747423B0064E0CD /* USBDeviceDrivers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863FA151745C0FC0044A8E5 /* USBDeviceDrivers.framework */; };
 		D863FA161745C0FC0044A8E5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E4B174459CD00B72444 /* Cocoa.framework */; };
 		D863FA1C1745C0FC0044A8E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D863FA1A1745C0FC0044A8E5 /* InfoPlist.strings */; };
 		D863FA241745C15A0044A8E5 /* USBDeviceFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E48174459CD00B72444 /* USBDeviceFramework.framework */; };
@@ -93,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86084041747423B0064E0CD /* USBDeviceDrivers.framework in Frameworks */,
 				D8A69E7617445FBB00B72444 /* CoreFoundation.framework in Frameworks */,
 				D8A69E7417445FBB00B72444 /* Foundation.framework in Frameworks */,
 				D8A69E7317445FB500B72444 /* IOKit.framework in Frameworks */,
@@ -546,6 +548,7 @@
 				D863FA221745C0FC0044A8E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8A69E42174459CD00B72444 /* Build configuration list for PBXProject "USBDeviceFramework" */ = {
 			isa = XCConfigurationList;
