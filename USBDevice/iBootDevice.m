@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 rms. All rights reserved.
 //
 
+#import "USBDevice.h"
 #import "iBootDevice.h"
 #include <assert.h>
 

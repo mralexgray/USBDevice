@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 rms. All rights reserved.
 //
 
-#import <USBDeviceFramework/USBDeviceFramework.h>
 
 #define kUSBAppleVendor         0x05AC
 #define kUSBAppleDFUDevice      0x1227

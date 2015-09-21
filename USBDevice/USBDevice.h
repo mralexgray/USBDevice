@@ -6,10 +6,13 @@
 //  Copyright (c) 2013 rms. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <IOKit/IOKitLib.h>
-#import <IOKit/usb/IOUSBLib.h>
-#import <IOKit/IOCFPlugIn.h>
+#ifndef USBDevice_USBDevice_h
+#define USBDevice_USBDevice_h
+
+@import Foundation;
+@import IOKit;
+@import IOKit.usb.IOUSBLib;
+
 
 typedef struct __controlPacket {
     uint8_t bmRequestType;
@@ -200,3 +203,7 @@ typedef enum {
 @property(copy, nonatomic) NSString* deviceFriendlyName;
 
 @end
+
+#import "iBootDevice.h"
+
+#endif
