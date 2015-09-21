@@ -3,4 +3,5 @@
 	url = git://github.com/DHowett/theos.git
 [submodule "JGRUSBDeviceMonitoring"]
 	path = JGRUSBDeviceMonitoring
-	url = https://github.com/JackRostron/JGRUSBDeviceMonitoring.git
+	url = https://github.com/mralexgray/JGRUSBDeviceMonitoring.git
+  branch = usbdevice
