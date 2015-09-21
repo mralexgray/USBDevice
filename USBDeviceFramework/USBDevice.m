@@ -9,10 +9,15 @@
 #import "USBDevice.h"
 #import <assert.h>
 
+#import <USBDeviceFramework/JGRUSBDeviceMonitor.h>
+#import <USBDeviceFramework/JGRiOSDeviceMonitor.h>
+
 @implementation USBDevice
+
 @synthesize deviceFriendlyName, deviceSerialNumber;
 
 #pragma mark - Overrides
+
 -(void)dealloc {
     if(_currentInterfaceInterface) {
         (*_currentInterfaceInterface)->USBInterfaceClose(_currentInterfaceInterface);
@@ -621,6 +626,26 @@
         assert(status == kIOReturnSuccess);
     }
     return kUSBDeviceErrorSuccess;
+}
+
+
+#pragma mark - Monitoring
+
+static  JGRUSBDeviceMonitor *monitor = nil;
+
++ (void) monitorConnected:(void(^)(NSDictionary *device))connected
+                  removed:(void(^)(NSDictionary *device))removed {
+
+  monitor = monitor ?: JGRUSBDeviceMonitor.new;
+   [monitor monitorForUSBDevicesWithConnectedBlock:^(NSDictionary *device) {
+
+      !connected ?: connected(device);
+
+    } removedBlock:^(NSDictionary *device) {
+
+      !removed ?: removed(device);
+
+    }];
 }
 
 @end

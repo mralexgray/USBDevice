@@ -199,4 +199,12 @@ typedef enum {
  */
 @property(copy, nonatomic) NSString* deviceFriendlyName;
 
+#pragma mark - properties
+
+/**
+ Monitor connected/disconnected devices.
+ */
++ (void) monitorConnected:(void(^)(NSDictionary *device))connected
+                  removed:(void(^)(NSDictionary *device))removed;
+
 @end

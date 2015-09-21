@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B3F44191BAFC23B0008217A /* JGRiOSDeviceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3F44141BAFC23B0008217A /* JGRiOSDeviceMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B3F44191BAFC23B0008217A /* JGRiOSDeviceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3F44141BAFC23B0008217A /* JGRiOSDeviceMonitor.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		7B3F441A1BAFC23B0008217A /* JGRiOSDeviceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F44151BAFC23B0008217A /* JGRiOSDeviceMonitor.m */; settings = {ASSET_TAGS = (); }; };
-		7B3F441B1BAFC23B0008217A /* JGRUSBDeviceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3F44161BAFC23B0008217A /* JGRUSBDeviceMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B3F441B1BAFC23B0008217A /* JGRUSBDeviceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3F44161BAFC23B0008217A /* JGRUSBDeviceMonitor.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		7B3F441C1BAFC23B0008217A /* JGRUSBDeviceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F44171BAFC23B0008217A /* JGRUSBDeviceMonitor.m */; settings = {ASSET_TAGS = (); }; };
-		7B3F441D1BAFC23B0008217A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F44181BAFC23B0008217A /* README.md */; settings = {ASSET_TAGS = (); }; };
+		7B3F441D1BAFC23B0008217A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F44181BAFC23B0008217A /* README.md */; settings = {ASSET_TAGS = (); }; };
 		D86084041747423B0064E0CD /* USBDeviceDrivers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863FA151745C0FC0044A8E5 /* USBDeviceDrivers.framework */; };
 		D863FA161745C0FC0044A8E5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E4B174459CD00B72444 /* Cocoa.framework */; };
 		D863FA1C1745C0FC0044A8E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D863FA1A1745C0FC0044A8E5 /* InfoPlist.strings */; };
@@ -21,10 +21,8 @@
 		D863FA2D1745C1CF0044A8E5 /* iBootDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D863FA2B1745C1CF0044A8E5 /* iBootDevice.m */; };
 		D863FA2F1745C59D0044A8E5 /* USBDeviceFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D863FA2E1745C5820044A8E5 /* USBDeviceFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8A69E4C174459CD00B72444 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E4B174459CD00B72444 /* Cocoa.framework */; };
-		D8A69E56174459CD00B72444 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A69E54174459CD00B72444 /* InfoPlist.strings */; };
 		D8A69E62174459E800B72444 /* USBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A69E60174459E800B72444 /* USBDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8A69E63174459E800B72444 /* USBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A69E61174459E800B72444 /* USBDevice.m */; };
-		D8A69E6D17445F8C00B72444 /* USBDeviceFrameworkTestTool.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8A69E6C17445F8C00B72444 /* USBDeviceFrameworkTestTool.1 */; };
 		D8A69E7117445FB000B72444 /* USBDeviceFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E48174459CD00B72444 /* USBDeviceFramework.framework */; };
 		D8A69E7317445FB500B72444 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E7217445FB500B72444 /* IOKit.framework */; };
 		D8A69E7417445FBB00B72444 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E50174459CD00B72444 /* Foundation.framework */; };
@@ -42,7 +40,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				D8A69E6D17445F8C00B72444 /* USBDeviceFrameworkTestTool.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -67,12 +64,9 @@
 		D8A69E4F174459CD00B72444 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D8A69E50174459CD00B72444 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D8A69E53174459CD00B72444 /* USBDeviceFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "USBDeviceFramework-Info.plist"; sourceTree = "<group>"; };
-		D8A69E55174459CD00B72444 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D8A69E57174459CD00B72444 /* USBDeviceFramework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USBDeviceFramework-Prefix.pch"; sourceTree = "<group>"; };
 		D8A69E60174459E800B72444 /* USBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBDevice.h; sourceTree = "<group>"; };
 		D8A69E61174459E800B72444 /* USBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBDevice.m; sourceTree = "<group>"; };
 		D8A69E6817445F8B00B72444 /* USBDeviceFrameworkTestTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = USBDeviceFrameworkTestTool; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8A69E6C17445F8C00B72444 /* USBDeviceFrameworkTestTool.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = USBDeviceFrameworkTestTool.1; sourceTree = "<group>"; };
 		D8A69E7217445FB500B72444 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		D8A69E7517445FBB00B72444 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		D8A69E7717445FF800B72444 /* Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
@@ -205,8 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				D8A69E53174459CD00B72444 /* USBDeviceFramework-Info.plist */,
-				D8A69E54174459CD00B72444 /* InfoPlist.strings */,
-				D8A69E57174459CD00B72444 /* USBDeviceFramework-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -214,7 +206,6 @@
 		D8A69E6917445F8C00B72444 /* USBDeviceFrameworkTestTool */ = {
 			isa = PBXGroup;
 			children = (
-				D8A69E6C17445F8C00B72444 /* USBDeviceFrameworkTestTool.1 */,
 				D8A69E7717445FF800B72444 /* Main.m */,
 			);
 			path = USBDeviceFrameworkTestTool;
@@ -339,7 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A69E56174459CD00B72444 /* InfoPlist.strings in Resources */,
+				7B3F441D1BAFC23B0008217A /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +351,6 @@
 			files = (
 				7B3F441A1BAFC23B0008217A /* JGRiOSDeviceMonitor.m in Sources */,
 				D8A69E63174459E800B72444 /* USBDevice.m in Sources */,
-				7B3F441D1BAFC23B0008217A /* README.md in Sources */,
 				7B3F441C1BAFC23B0008217A /* JGRUSBDeviceMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,14 +374,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		D8A69E54174459CD00B72444 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8A69E55174459CD00B72444 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -399,12 +381,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "USBDeviceDrivers/USBDeviceDrivers-Prefix.pch";
 				INFOPLIST_FILE = "USBDeviceDrivers/USBDeviceDrivers-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.${PRODUCT_NAME:rfc1034identifier}";
@@ -417,12 +396,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "USBDeviceDrivers/USBDeviceDrivers-Prefix.pch";
 				INFOPLIST_FILE = "USBDeviceDrivers/USBDeviceDrivers-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.${PRODUCT_NAME:rfc1034identifier}";
@@ -527,8 +503,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "USBDeviceFramework/USBDeviceFramework-Prefix.pch";
 				INFOPLIST_FILE = "USBDeviceFramework/USBDeviceFramework-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -544,8 +518,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "USBDeviceFramework/USBDeviceFramework-Prefix.pch";
 				INFOPLIST_FILE = "USBDeviceFramework/USBDeviceFramework-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

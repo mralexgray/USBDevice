@@ -11,7 +11,4 @@
 
 #import <USBDeviceFramework/USBDevice.h>
 
-#import <USBDeviceFramework/JGRUSBDeviceMonitor.h>
-#import <USBDeviceFramework/JGRiOSDeviceMonitor.h>
-
 #endif
