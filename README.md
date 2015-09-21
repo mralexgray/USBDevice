@@ -1,6 +1,6 @@
-# USBDeviceFramework
+# USBDevice
 
-Say hello to USBDeviceFramework, an open-source IOKit based USB device framework that provides support for USB devices on embedded and desktop platforms (iPhone OS and OS X). [Theos](http://github.com/DHowett/theos) support coming soon.
+Say hello to USBDevice, an open-source IOKit based USB device framework that provides support for USB devices on embedded and desktop platforms (iPhone OS and OS X). [Theos](http://github.com/DHowett/theos) support coming soon.
 
 ## Requirements
 
