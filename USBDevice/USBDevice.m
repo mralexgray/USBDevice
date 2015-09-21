@@ -9,8 +9,7 @@
 #import "USBDevice.h"
 #import <assert.h>
 
-#import <USBDeviceFramework/JGRUSBDeviceMonitor.h>
-#import <USBDeviceFramework/JGRiOSDeviceMonitor.h>
+#import "JGRiOSDeviceMonitor.h"
 
 @implementation USBDevice
 

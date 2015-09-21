@@ -2,7 +2,7 @@
 // USBDeviceFrameworkTestTool
 //
 
-@import USBDeviceFramework;
+@import USBDevice;
 @import AppKit;
 
 #define LOG_EVENT(event) printf( "" #event " device: %s\n", device.description.UTF8String);
