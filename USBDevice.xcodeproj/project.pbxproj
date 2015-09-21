@@ -11,7 +11,6 @@
 		7B3F441A1BAFC23B0008217A /* JGRiOSDeviceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F44151BAFC23B0008217A /* JGRiOSDeviceMonitor.m */; settings = {ASSET_TAGS = (); }; };
 		7B3F441B1BAFC23B0008217A /* JGRUSBDeviceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3F44161BAFC23B0008217A /* JGRUSBDeviceMonitor.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		7B3F441C1BAFC23B0008217A /* JGRUSBDeviceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F44171BAFC23B0008217A /* JGRUSBDeviceMonitor.m */; settings = {ASSET_TAGS = (); }; };
-		7B3F441D1BAFC23B0008217A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F44181BAFC23B0008217A /* README.md */; settings = {ASSET_TAGS = (); }; };
 		7B3F44201BAFCBB50008217A /* iBootDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = D863FA2A1745C1CF0044A8E5 /* iBootDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B3F44241BAFCCF50008217A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3F44231BAFCCF50008217A /* IOKit.framework */; };
 		7B3F44261BAFCCFD0008217A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3F44251BAFCCFD0008217A /* CoreFoundation.framework */; };
@@ -42,6 +41,7 @@
 		7B3F44181BAFC23B0008217A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7B3F44231BAFCCF50008217A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		7B3F44251BAFCCFD0008217A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		7B3F44281BAFD01A0008217A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D863FA2A1745C1CF0044A8E5 /* iBootDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iBootDevice.h; path = USBDevice/iBootDevice.h; sourceTree = "<group>"; };
 		D863FA2B1745C1CF0044A8E5 /* iBootDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iBootDevice.m; path = USBDevice/iBootDevice.m; sourceTree = "<group>"; };
 		D8A69E48174459CD00B72444 /* USBDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = USBDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +108,7 @@
 		D8A69E52174459CD00B72444 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B3F44281BAFD01A0008217A /* README.md */,
 				D8A69E4A174459CD00B72444 /* Frameworks */,
 				D8A69E53174459CD00B72444 /* USBDevice-Info.plist */,
 			);
@@ -208,7 +209,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A69E56174459CD00B72444 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
