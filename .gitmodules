@@ -1,3 +1,6 @@
 [submodule "theos"]
 	path = theos
 	url = git://github.com/DHowett/theos.git
+[submodule "JGRUSBDeviceMonitoring"]
+	path = JGRUSBDeviceMonitoring
+	url = https://github.com/JackRostron/JGRUSBDeviceMonitoring.git

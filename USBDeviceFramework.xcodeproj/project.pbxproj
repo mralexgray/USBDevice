@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B3F44191BAFC23B0008217A /* JGRiOSDeviceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3F44141BAFC23B0008217A /* JGRiOSDeviceMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B3F441A1BAFC23B0008217A /* JGRiOSDeviceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F44151BAFC23B0008217A /* JGRiOSDeviceMonitor.m */; settings = {ASSET_TAGS = (); }; };
+		7B3F441B1BAFC23B0008217A /* JGRUSBDeviceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3F44161BAFC23B0008217A /* JGRUSBDeviceMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B3F441C1BAFC23B0008217A /* JGRUSBDeviceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F44171BAFC23B0008217A /* JGRUSBDeviceMonitor.m */; settings = {ASSET_TAGS = (); }; };
+		7B3F441D1BAFC23B0008217A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F44181BAFC23B0008217A /* README.md */; settings = {ASSET_TAGS = (); }; };
 		D86084041747423B0064E0CD /* USBDeviceDrivers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863FA151745C0FC0044A8E5 /* USBDeviceDrivers.framework */; };
 		D863FA161745C0FC0044A8E5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A69E4B174459CD00B72444 /* Cocoa.framework */; };
 		D863FA1C1745C0FC0044A8E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D863FA1A1745C0FC0044A8E5 /* InfoPlist.strings */; };
@@ -44,6 +49,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B3F44141BAFC23B0008217A /* JGRiOSDeviceMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGRiOSDeviceMonitor.h; sourceTree = "<group>"; };
+		7B3F44151BAFC23B0008217A /* JGRiOSDeviceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGRiOSDeviceMonitor.m; sourceTree = "<group>"; };
+		7B3F44161BAFC23B0008217A /* JGRUSBDeviceMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGRUSBDeviceMonitor.h; sourceTree = "<group>"; };
+		7B3F44171BAFC23B0008217A /* JGRUSBDeviceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGRUSBDeviceMonitor.m; sourceTree = "<group>"; };
+		7B3F44181BAFC23B0008217A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D863FA151745C0FC0044A8E5 /* USBDeviceDrivers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = USBDeviceDrivers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D863FA191745C0FC0044A8E5 /* USBDeviceDrivers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "USBDeviceDrivers-Info.plist"; sourceTree = "<group>"; };
 		D863FA1B1745C0FC0044A8E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -105,6 +115,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B3F44131BAFC23B0008217A /* JGRUSBDeviceMonitoring */ = {
+			isa = PBXGroup;
+			children = (
+				7B3F44141BAFC23B0008217A /* JGRiOSDeviceMonitor.h */,
+				7B3F44151BAFC23B0008217A /* JGRiOSDeviceMonitor.m */,
+				7B3F44161BAFC23B0008217A /* JGRUSBDeviceMonitor.h */,
+				7B3F44171BAFC23B0008217A /* JGRUSBDeviceMonitor.m */,
+				7B3F44181BAFC23B0008217A /* README.md */,
+			);
+			path = JGRUSBDeviceMonitoring;
+			sourceTree = SOURCE_ROOT;
+		};
 		D863FA171745C0FC0044A8E5 /* USBDeviceDrivers */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +192,7 @@
 		D8A69E51174459CD00B72444 /* USBDeviceFramework */ = {
 			isa = PBXGroup;
 			children = (
+				7B3F44131BAFC23B0008217A /* JGRUSBDeviceMonitoring */,
 				D8A69E52174459CD00B72444 /* Supporting Files */,
 				D8A69E60174459E800B72444 /* USBDevice.h */,
 				D8A69E61174459E800B72444 /* USBDevice.m */,
@@ -212,6 +235,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3F441B1BAFC23B0008217A /* JGRUSBDeviceMonitor.h in Headers */,
+				7B3F44191BAFC23B0008217A /* JGRiOSDeviceMonitor.h in Headers */,
 				D8A69E62174459E800B72444 /* USBDevice.h in Headers */,
 				D863FA2F1745C59D0044A8E5 /* USBDeviceFramework.h in Headers */,
 			);
@@ -279,7 +304,7 @@
 		D8A69E3F174459CD00B72444 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = rms;
 			};
 			buildConfigurationList = D8A69E42174459CD00B72444 /* Build configuration list for PBXProject "USBDeviceFramework" */;
@@ -333,7 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3F441A1BAFC23B0008217A /* JGRiOSDeviceMonitor.m in Sources */,
 				D8A69E63174459E800B72444 /* USBDevice.m in Sources */,
+				7B3F441D1BAFC23B0008217A /* README.md in Sources */,
+				7B3F441C1BAFC23B0008217A /* JGRUSBDeviceMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -378,8 +407,8 @@
 				GCC_PREFIX_HEADER = "USBDeviceDrivers/USBDeviceDrivers-Prefix.pch";
 				INFOPLIST_FILE = "USBDeviceDrivers/USBDeviceDrivers-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -388,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -395,8 +425,8 @@
 				GCC_PREFIX_HEADER = "USBDeviceDrivers/USBDeviceDrivers-Prefix.pch";
 				INFOPLIST_FILE = "USBDeviceDrivers/USBDeviceDrivers-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -405,7 +435,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -416,6 +445,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -444,7 +474,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -453,7 +483,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -485,7 +514,7 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
@@ -494,12 +523,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "USBDeviceFramework/USBDeviceFramework-Prefix.pch";
 				INFOPLIST_FILE = "USBDeviceFramework/USBDeviceFramework-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -509,12 +540,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "USBDeviceFramework/USBDeviceFramework-Prefix.pch";
 				INFOPLIST_FILE = "USBDeviceFramework/USBDeviceFramework-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -523,18 +556,20 @@
 		D8A69E6F17445F8C00B72444 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
 		D8A69E7017445F8C00B72444 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
