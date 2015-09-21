@@ -9,17 +9,17 @@ int main()
 {
     [NSApplication sharedApplication];
 
-//    NSLog(@"%@", [USBDevice.getAllAttachedDevices valueForKey:@"DeviceFriendlyName"]);
+    NSLog(@"%@", [USBDevice.getAllAttachedDevices valueForKey:@"DeviceFriendlyName"]);
 
-    JGRUSBDeviceMonitor *usbDeviceMonitor = JGRUSBDeviceMonitor.new;
+    [JGRUSBDeviceMonitor.new monitorForUSBDevicesWithConnectedBlock:^(NSDictionary *device) {
 
-    [usbDeviceMonitor monitorForUSBDevicesWithConnectedBlock:^(NSDictionary *device) {
       NSLog(@"connected: %@", device);
 
     } removedBlock:^(NSDictionary *device) {
-            NSLog(@"disconnected: %@", device);
+
+      NSLog(@"disconnected: %@", device);
 
     }];
-    [NSApp run];
-    return 0;
+
+    return [NSApp run], 0;
 }
